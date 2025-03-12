@@ -3,7 +3,7 @@ package metodos;
 import java.util.Arrays;
 
 public class met {
-    
+
     private String prof[] = { "Alex Andrade", "Wanfranklin Alves", "Padilha Neto", "Erivelton Lima" };
     private String msg = "Bem Vindo ao Java - Santinho";
     private String msgProf = "Professor: ";
@@ -13,13 +13,23 @@ public class met {
     private int margem2 = (largura - (msgProf.length() + msgUnp.length() + 18));
     private int margem = (largura - msg.length()) / 2;
     private char simbolo = '*'; // alt+973='\u2550';
-    
+
+    public void meioTela() {
+        for (int s = 0; s < altura - 14; s++) {
+            System.out.print("" + simbolo + simbolo);
+            for (int S = 0; S < largura - 4; S++) {
+                System.out.print(" ");
+            }
+        }
+
+        System.out.println();
+    }
 
     public void telaProf() {
-        // for (int s = 0; s < largura; s++) {
-        //     System.out.print(simbolo);
-        // }
-        // System.out.println("");
+        for (int s = 0; s < largura; s++) {
+            System.out.print(simbolo);
+        }
+        System.out.println("");
 
         for (int s = 0; s < 1; s++) {
             System.out.print("" + simbolo + simbolo);
@@ -29,7 +39,6 @@ public class met {
             }
             System.out.print(msgUnp);
 
-            
             System.out.println("" + simbolo + simbolo);
         }
 
@@ -67,23 +76,10 @@ public class met {
 
         System.out.println();
 
-        for (int s = 0; s < altura - 14; s++) {
-            System.out.print("" + simbolo + simbolo);
-            for (int S = 0; S < largura - 4; S++) {
-                System.out.print(" ");
-            }
-        }
-
-        System.out.println();
-
-        for (int s = 0; s < largura; s++) {
-            System.out.print(simbolo);
-        }
-        System.out.println("");
     }
 
     public void listaProf() {
-        
+
         Arrays.sort(prof);
         for (int s = 0; s < prof.length; s++) {
             if (s < prof.length - 1) {
